@@ -35,3 +35,4 @@ fun main() {
 }
 
 return num.toString().map{it.toString().toInt()}
+//return num.toString().map{it.toString().toInt()}.toList()
