@@ -34,12 +34,4 @@ fun main() {
     println("В массиве использовано ${set.size} различных цифр")
 }
 
-fun getDigits(num: Int): List<Int> {
-    val digits = ArrayList<Int>()
-    var n = num
-    while (n > 0) {
-        digits.add(n % 10)
-        n /= 10
-    }
-    return digits
-}
+return num.toString().map{it.toString().toInt()}
