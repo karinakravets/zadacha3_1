@@ -29,3 +29,6 @@ fun main() {
 fun getDigits(num: Int): List<Int> {
     return num.toString().map { it.toString().toInt() }.toList()
 }
+/*100   951   101   950
+519   999   155   501
+510   911   144   554/*
