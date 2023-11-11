@@ -1,4 +1,4 @@
-import java.util.*
+import java.util.Scanner
 
 fun main() {
     val scanner = Scanner(System.`in`)
@@ -8,12 +8,12 @@ fun main() {
     val columns = scanner.nextInt()
     val array = Array(rows) { IntArray(columns) }
     println("Введите $rows x $columns трехзначных чисел:")
-    val set = HashSet<Int>()
+    var set = ""
     for (i in 0 until rows) {
         for (j in 0 until columns) {
             val num = scanner.nextInt()
             array[i][j] = num
-            set.addAll(getDigits(num))
+            set += num.toString().toSet().map { it.toString().toInt() }.joinToString("")
         }
     }
     println("Двумерный массив из введенных чисел:")
@@ -23,12 +23,9 @@ fun main() {
         }
         println()
     }
-    println("В массиве использовано ${set.size} различных цифр")
+    println("В массиве использовано ${set.toSet().size} различных цифр")
 }
+/*100 951 101 950
+519 999 155 501
+510 911 144 554*/
 
-fun getDigits(num: Int): List<Int> {
-    return num.toString().map { it.toString().toInt() }.toList()
-}
-/*100   951   101   950
-519   999   155   501
-510   911   144   554*/
